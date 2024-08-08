@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Profile Viewer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-image: linear-gradient(to right, #34C759, #FFFFFF);
+            background-size: 100% 100vh;
+            background-position: 0% 100%;
+            transition: background-position 0.5s ease-out;
+            height: 100vh;
+            margin: 0;
+        }
+        .nav-bg {
+            background: none;
+        }
+    
+
+        .nav-link {
+            color: #040805;
+            transition: color 0.2s ease-out;
+            font-weight: 600;
+        }
+        
+        .nav-link:hover {
+            color: #f1f8f2;
+        }
+        .repo-link {
+            color: #0e0d0d;
+            transition: color 0.2s ease-out;
+            font-weight: 500;
+        }
+        .repo-link:hover {
+            color: #CCCCCC;
+        }
+        
+     
+    </style>
+</head>
+<body>
+    <nav class=" top-0 z-50 nav-bg py-4">
+        <div class="container mx-auto p-4 flex justify-between items-center">
+            <a href="https://github.com" target="_blank" class="nav-link">
+                <i class="fab fa-github fa-2x mr-2"></i>
+            </a>
+            <h1 class="text-3xl text-white font-bold"><span class="text-black">GitHub </span>Profile Viewer</h1>
+            <ul class="flex items-center">
+                <li class="mr-4">
+                    <a href="#" class="nav-link">View  <span class="text-white hover:text-green-500">GitHub</span> Profile :</a>
+                </li>
+                
+                <li>
+                    <div class="flex items-center">
+                        <input id="username" type="text" placeholder="Enter a GitHub username" class="bg-gray-100 text-gray-800 p-2 rounded w-64">
+                        <button id="search-btn" class="bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded ml-2">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main class="container mx-auto p-4 pt-20">
+        <div id="profile-info" class="hidden opacity-0 transition duration-500 ease-in-out">
+            <div class="flex items-center mb-4">
+                <img id="avatar" src="" alt="Avatar" class="w-32 h-32 rounded-full mr-4">
+                <h2 id="username-header" class="text-2xl text-white font-bold"></h2>
+            </div>
+            <p id="bio" class="text-gray-200 mb-4"></p>
+            <ul id="repos" class="list-none mb-4">
+                <li class="mb-2">
+                    <a href="#" class="repo-link" target="_blank">
+                        repository name will be rendered here
+                    </a>
+                </li>
+            </ul>
+            <h1 class="font-bold text-white">Repo's Name :</h1>
+            <div id="repo-name" class="text-black font-bold mb-4"></div>
+            <h1 class="font-bold text-white">GitHub Info :</h1>
+            <ul id="github-info" class="list-none mb-4">
+                <li class="mb-2">
+                    <span class="text-gray-200">Followers :</span>
+                    <span id="followers" class="text-black font-bold"></span>
+                </li>
+                <li class="mb-2">
+                    <span class="text-gray-200">Following :</span>
+                    <span id="following" class="text-black font-bold"></span>
+                </li>
+                <li class="mb-2">
+                    <span class="text-gray-200">Public Repos :</span>
+                    <span id="public-repos" class="text-black font-bold"></span>
+                </li>
+                <li class="mb-2">
+                    <span class="text-gray-200">Public Gists :</span>
+                    <span id="public-gists" class="text-black font-bold"></span>
+                </li>
+            </ul>
+            <h1 class="font-bold text-white">Organization :</h1>
+            <div id="organization" class="text-black font-bold mb-4"></div>
+            <h1 class="font-bold text-white">Location :</h1>
+            <div id="location" class="text-black font-bold mb-4"></div>
+            <h1 class="font-bold text-white">Email :</h1>
+            <div id="email" class="text-black font-bold mb-4"></div>
+            <h1 class="font-bold text-white">Hireable :</h1>
+            <div id="hireable" class="text-black font-bold mb-4"></div>
+            <h1 class="font-bold text-white">Created At :</h1>
+            <div id="created-at" class="text-black font-bold mb-4"></div>
+            <h1 class="font-bold text-white">Updated At :</h1>
+            <div id="updated-at" class="text-black font-bold mb-4"></div>
+        </div>
+        <div id="loading-spinner" class="hidden">
+            <i class="fas fa-spinner fa-spin fa-3x text-white-800"></i>
+        </div>
+        <div id="error-message" class="hidden text-red-500"></div>
+    </main>
+    <footer class="bg-none p-10 text-center font-bold text-black">
+        Designed with ❤️ by  <span class="text-red-600">Paresh Shrivastava</span>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
